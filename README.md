@@ -48,7 +48,7 @@ Place your pdb input a folder /<your_folder_path>/:
 Torsionator uses Open Babel and RDKit, and they  rely on strict atom typing and element recognition, input PDB files were curated to remove ambiguities in atom naming and to explicitly define element fields; for instance, a chlorine atom originally labeled as ‘Cl’ in the atom name field was standardized by explicitly specifying ‘Cl’ in the element column to ensure correct parsing.
 
 ## 4 **Run**<br>
-The user can change and use the script run.sh inside the "container" folder to select which options apply to the scanning.
+The user can change and use the script container/run.sh of the repository to select which options apply to the scanning.
 To change the scanning options modify:
 
 ```
@@ -68,6 +68,8 @@ DOUBLE_ROTATION="true"           # "true" | "false" | "none", false" →  just c
 NET_CHARGE="0"                   # net molecule charge, (default 0, other charges raise warning with mace and obi)
 SPIN="1"                         # molecule spin (2S+1) (default 1; other spins raise warning with mace and obi)
 ```
+
+Look at container/run_example.sh for a "real" case example, where the input .pbd (fragment.pdb) used is located in folder example/, same folder where Torsionator generated its outputs . 
 
 Suggestion: print the dihedrals before passing the wanted one, the code should recognize your input but my suggestion is to check the code-preferred dihedral definition.
 
