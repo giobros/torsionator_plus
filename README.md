@@ -10,7 +10,7 @@ Torsionator is an end‑to‑end pipeline for dihedral scans and torsion paramet
 <img width="9285" height="8002" alt="Picture3" src="https://github.com/user-attachments/assets/25984aaf-26c1-41f0-a0ab-389f4adeca56" />
 
 
-## 2. **Instalaltion**
+## 2. **Installation**
 
 **Requirements** <br>
 - Apptainer ≥ 1.x installed <br>
@@ -40,7 +40,7 @@ cat torsionator.sif.part_a* > torsionator.sif.
 For UMA: you need to install from https://huggingface.co/facebook/UMA the checkpoints "uma-s-1p1.pt", and put in folder "torsionator" of the repository, there the pipeline scripts are located.
 
 ## 3 **Prepare your host work directory**<br>
-Place your pdb input and script inside the "main" folder insaide the repo:
+Place your pdb input a folder /<your_folder_path>/:
 ```
 /<your_folder_path>/
 └── <NAME>.pdb # your input structure
@@ -48,7 +48,7 @@ Place your pdb input and script inside the "main" folder insaide the repo:
 Torsionator uses Open Babel and RDKit, and they  rely on strict atom typing and element recognition, input PDB files were curated to remove ambiguities in atom naming and to explicitly define element fields; for instance, a chlorine atom originally labeled as ‘Cl’ in the atom name field was standardized by explicitly specifying ‘Cl’ in the element column to ensure correct parsing.
 
 ## 4 **Run**<br>
-The user can change and use the script run.sh inside the "main" folder to select which options apply to the scanning.
+The user can change and use the script run.sh inside the "container" folder to select which options apply to the scanning.
 To change the scanning options modify:
 
 ```
