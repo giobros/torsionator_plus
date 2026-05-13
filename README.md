@@ -17,8 +17,15 @@ Torsionator is an end‑to‑end pipeline for dihedral scans and torsion paramet
 - NVIDIA GPU (optional) and host NVIDIA drivers; use --nv if you want GPU acceleration <br>
 - <your_folder_path> on the host that will be bind‑mounted as '/data' inside the container <br>
 
-To install Apptainer with the correct privileged version look at https://apptainer.org/docs/admin/1.4/installation.html, if you have ubuntu you can look at container/apptainer_installation
+To install Apptainer with the correct privileged version look at https://apptainer.org/docs/admin/1.4/installation.html, if you have ubuntu you can look install like that:
+```
+wget https://github.com/apptainer/apptainer/releases/download/v1.4.5/apptainer_1.4.5_amd64.deb
+sudo apt install -y ./apptainer_1.4.5_amd64.deb
 
+wget https://github.com/apptainer/apptainer/releases/download/v1.4.5/apptainer-suid_1.4.5_amd64.deb
+sudo dpkg -i ./apptainer-suid_1.4.5_amd64.deb
+
+```
 **Clone the repository**<br>
 First clone the repo and then move into the top-level directory of the package.<br>
 ```
@@ -26,16 +33,18 @@ git clone https://github.com/giobros/torsionator.git
 ```
 **Build the image**<br>
 All the dependencies can be loaded together using the torsionator.sif generated with the .def file and Apptainer.
-Enter the folder container and lunch the file .sh to create the image
-```
-cd torsionator/container
-sudo apptainer build torsionator.sif torsionator.def
-```
-To obtain the image faster and in a more reproducible way, you can simply concatenate the split SIF parts (available under the Releases section of this GitHub repository) instead of rebuilding it from the .def file: 
-```
-cat torsionator.sif.part_a* > torsionator.sif.
-```
-<method> available: uma (small) / mace (mace_off23) /obi
+You can create the .sif in two ways:
+  1. Enter the folder container and lunch the file .sh to create the image
+  ```
+  cd torsionator/container
+  sudo apptainer build torsionator.sif torsionator.def
+  ```
+  2. To obtain the image faster and in a more reproducible way, you can simply concatenate the split SIF parts (available under the Releases section of this GitHub repository) instead of rebuilding it from the .def file: 
+  ```
+  cat torsionator.sif.part_a* > torsionator.sif.
+  ```
+
+The <method> availables are: uma (small) / mace (mace_off23) /obi
 
 For UMA: you need to install from https://huggingface.co/facebook/UMA the checkpoints "uma-s-1p1.pt", and put in folder "torsionator" of the repository, there the pipeline scripts are located.
 
