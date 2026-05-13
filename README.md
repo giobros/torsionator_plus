@@ -41,7 +41,7 @@ You can create the .sif in two ways:
   ```
   2. To obtain the image faster and in a more reproducible way, you can simply concatenate the split SIF parts (available under the Releases section of this GitHub repository) instead of rebuilding it from the .def file: 
   ```
-  cat torsionator.sif.part_a* > torsionator.sif.
+  cat torsionator.sif.part_a* > torsionator.sif
   ```
 
 The NNPs available are: uma (small) / mace (mace_off23) /obi
