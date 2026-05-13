@@ -44,7 +44,7 @@ You can create the .sif in two ways:
   cat torsionator.sif.part_a* > torsionator.sif.
   ```
 
-The <method> availables are: uma (small) / mace (mace_off23) /obi
+The method availables are: uma (small) / mace (mace_off23) /obi
 
 For UMA: you need to install from https://huggingface.co/facebook/UMA the checkpoints "uma-s-1p1.pt", and put in folder "torsionator" of the repository, there the pipeline scripts are located.
 
